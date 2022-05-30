@@ -18,7 +18,9 @@ a {
 }
 
 img {
+  display: block;
   width: 100%;
+  border-radius: 5px;
 }
 
 /* Grid geral */
@@ -85,8 +87,19 @@ img {
 
 .anuncios {
   grid-area: anuncios;
+  background: #fafbfc;
+  display: grid;
+  align-content: flex-start;
+  padding: 30px;
+  gap: 30px;
 }
 
 .footer {
   grid-area: footer;
+  background: linear-gradient(135deg, #8844ee, #B07DFB);
+}
+.footer p {
+  color: #FFF;
+  text-align: center;
+  padding: 10px;
 }

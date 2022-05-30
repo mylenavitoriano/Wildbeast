@@ -22,7 +22,9 @@ a{
 }
 
 img{
+  display: block;
   width: 100%;
+  border-radius: 5px;
 }
 
 /* Grid geral */
@@ -47,5 +49,12 @@ img{
 
 .footer{
   grid-area: footer;
+  background: $color-primary;
+
+  p{
+    color: #FFF;
+    text-align: center;
+    padding: 10px;
+  }
 }
 

@@ -7,6 +7,10 @@
   grid-template-columns: 1fr 1fr;
   gap: 30px;
 
+  @media (max-width: 600px) {
+    grid-template-columns: auto;
+  }
+
   p{
     font-size: 1.2em;
     line-height: 1.6;

@@ -6,8 +6,16 @@
   grid-template-columns: 1fr auto;
   align-items: center;
 
+  @media(max-width: $mobile){
+    grid-template-columns: auto;
+  }
+
   .logo{
     max-width: 200px;
+
+    @media(max-width: $mobile){
+      margin-bottom: 20px;
+    }
   }
 
   nav{
@@ -17,6 +25,10 @@
 
       li + li {
         margin-left: 30px;
+
+        @media(max-width: $mobile){
+          margin-left: 10px;
+        }
       }
 
       a{
@@ -27,6 +39,10 @@
         background: rgba(0, 0, 0, .1);
         border-radius: 5px;
         transition: all ease .3s;
+
+        @media(max-width: $mobile){
+          font-size: 1em;
+        }
 
         &:hover{
           background: rgba(0, 0, 0, .5);

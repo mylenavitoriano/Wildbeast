@@ -3,16 +3,41 @@
   background: #fafbfc;
   padding: 30px;
 
+  @media(max-width: $mobile){
+    position: relative;
+    padding: 0 30px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &::after{
+      content: '→';
+      position: absolute;
+      top: 5px;
+      right: 30px;
+      color: rgba(0, 0, 0, .3);
+      animation: seta .5s ease-in 0s infinite alternate;
+    }
+  }
+
   ul{
 
+    @media(max-width: $mobile){
+      display: flex;
+      align-items: center;
+    }
+
     li{
+      @media(max-width: $mobile){
+        flex: 1 0 60px;
+      }
+
       a{
         display: block;
         min-width: 60px;
-        max-width: 100px;
+        max-width: 150px;
         margin: 0 auto 30px;
         background: #FFF;
-        padding: 10px;
+        padding: 20px;
         border-radius: 5px;
         box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
         transition: all ease .5s;
@@ -20,7 +45,22 @@
         &:hover{
           background: $color-secundary;
         }
+
+        @media(max-width: $mobile){
+          margin: 30px 30px;
+          padding: 5px;
+          width: 100px;
+        }
       }
     }
+  }
+}
+
+@keyframes seta {
+  from{
+    right: 30px;
+  }
+  to{
+    right: 20px;
   }
 }

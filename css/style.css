@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,700;1,400&display=swap");
 * {
   margin: 0;
@@ -29,6 +30,17 @@ img {
   grid-template-columns: minmax(160px, 1fr) 3fr 300px;
   grid-template-areas: "header header header" "sidenav content anuncios" "footer footer footer";
 }
+@media (max-width: 1200px) {
+  .estrutura {
+    grid-template-areas: "header header header" "sidenav content content" "sidenav anuncios anuncios" "footer footer footer";
+  }
+}
+@media (max-width: 760px) {
+  .estrutura {
+    grid-template-columns: 100%;
+    grid-template-areas: "header" "sidenav" "content" "anuncios" "footer";
+  }
+}
 
 .header {
   grid-area: header;
@@ -38,8 +50,18 @@ img {
   grid-template-columns: 1fr auto;
   align-items: center;
 }
+@media (max-width: 760px) {
+  .header {
+    grid-template-columns: auto;
+  }
+}
 .header .logo {
   max-width: 200px;
+}
+@media (max-width: 760px) {
+  .header .logo {
+    margin-bottom: 20px;
+  }
 }
 .header nav ul {
   display: flex;
@@ -47,6 +69,11 @@ img {
 }
 .header nav ul li + li {
   margin-left: 30px;
+}
+@media (max-width: 760px) {
+  .header nav ul li + li {
+    margin-left: 10px;
+  }
 }
 .header nav ul a {
   display: block;
@@ -57,6 +84,11 @@ img {
   border-radius: 5px;
   transition: all ease 0.3s;
 }
+@media (max-width: 760px) {
+  .header nav ul a {
+    font-size: 1em;
+  }
+}
 .header nav ul a:hover {
   background: rgba(0, 0, 0, 0.5);
 }
@@ -66,13 +98,40 @@ img {
   background: #fafbfc;
   padding: 30px;
 }
+@media (max-width: 760px) {
+  .sidenav {
+    position: relative;
+    padding: 0 30px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sidenav::after {
+    content: "→";
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    color: rgba(0, 0, 0, 0.3);
+    animation: seta 0.5s ease-in 0s infinite alternate;
+  }
+}
+@media (max-width: 760px) {
+  .sidenav ul {
+    display: flex;
+    align-items: center;
+  }
+}
+@media (max-width: 760px) {
+  .sidenav ul li {
+    flex: 1 0 60px;
+  }
+}
 .sidenav ul li a {
   display: block;
   min-width: 60px;
-  max-width: 100px;
+  max-width: 150px;
   margin: 0 auto 30px;
   background: #FFF;
-  padding: 10px;
+  padding: 20px;
   border-radius: 5px;
   box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
   transition: all ease 0.5s;
@@ -80,7 +139,22 @@ img {
 .sidenav ul li a:hover {
   background: #B07DFD;
 }
+@media (max-width: 760px) {
+  .sidenav ul li a {
+    margin: 30px 30px;
+    padding: 5px;
+    width: 100px;
+  }
+}
 
+@keyframes seta {
+  from {
+    right: 30px;
+  }
+  to {
+    right: 20px;
+  }
+}
 .content {
   grid-area: content;
   max-width: 900px;
@@ -89,6 +163,11 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+}
+@media (max-width: 600px) {
+  .content {
+    grid-template-columns: auto;
+  }
 }
 .content p {
   font-size: 1.2em;
@@ -195,6 +274,7 @@ img {
   align-content: flex-start;
   padding: 30px;
   gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 .footer {

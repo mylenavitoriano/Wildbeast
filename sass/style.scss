@@ -3,6 +3,9 @@
 $color-primary: linear-gradient(135deg, #8844ee, #B07DFB);
 $color-secundary: #B07DFD;
 
+$tablet: 1200px;
+$mobile: 760px;
+
 *{
   margin: 0;
   padding: 0;
@@ -37,6 +40,24 @@ img{
     "sidenav content anuncios"
     "footer footer footer"
   ;
+
+  @media(max-width: $tablet){
+    grid-template-areas: 
+    "header header header"
+    "sidenav content content"
+    "sidenav anuncios anuncios"
+    "footer footer footer";
+  }
+
+  @media(max-width: $mobile){
+    grid-template-columns: 100%;
+    grid-template-areas: 
+    "header"
+    "sidenav"
+    "content"
+    "anuncios"
+    "footer";
+  }
 }
 
 @import 'header';

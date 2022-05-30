@@ -83,6 +83,109 @@ img {
 
 .content {
   grid-area: content;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+.content p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+  color: rgba(0, 0, 0, 0.7);
+}
+.content .titulo {
+  color: #B07DFD;
+}
+.content .titulo h1 {
+  font-size: 3.75em;
+  line-height: 1;
+  font-weight: 700;
+}
+.content .titulo span {
+  font-size: 0.875em;
+  font-style: italic;
+}
+.content .caracteristicas {
+  display: flex;
+  align-items: flex-start;
+}
+.content .caracteristicas > div {
+  width: 80px;
+  text-align: center;
+  background: linear-gradient(135deg, #8844ee, #B07DFB);
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  position: relative;
+}
+.content .caracteristicas > div:first-child {
+  margin-right: 30px;
+}
+.content .caracteristicas span {
+  display: block;
+  color: #B07DFD;
+}
+.content .caracteristicas .numero {
+  font-size: 3em;
+  line-height: 1;
+  margin-top: 10px auto;
+  padding: 5px;
+}
+.content .caracteristicas .rotulo {
+  background: #FFF;
+  border-radius: 0 0 5px 5px;
+  padding: 5px 0;
+  position: relative;
+  top: 2px;
+}
+.content .destaque {
+  font-size: 0.875em;
+  color: #B07DFD;
+  max-width: 16em;
+}
+.content .citacao, .content .atributos {
+  align-self: start;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+  background: linear-gradient(135deg, #8844ee, #B07DFB);
+  color: #FFF;
+}
+.content .citacao p {
+  font-size: 1.5em;
+  font-style: italic;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  color: #FFF;
+}
+.content .atributos li {
+  color: #FFF;
+  font-family: Courier, monospace;
+  font-size: 1.125em;
+  padding: 15px;
+  font-weight: 700;
+}
+.content .atributos li + li {
+  border-top: 2px solid #B07DFD;
+}
+.content .informacoes p + p {
+  margin-top: 30px;
+}
+
+.col-wide {
+  grid-column: 1/-1;
+}
+
+.image-1 {
+  grid-row: span 2;
+  align-self: flex-end;
+}
+
+.image-2 {
+  align-self: flex-end;
 }
 
 .anuncios {

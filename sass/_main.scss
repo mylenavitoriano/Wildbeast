@@ -1,3 +1,128 @@
 .content{
   grid-area: content;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+
+  p{
+    font-size: 1.2em;
+    line-height: 1.6;
+    letter-spacing: -0.005em;
+    color: rgba(0, 0, 0, .7);
+  }
+
+  .titulo{
+    color: $color-secundary;
+
+    h1{
+      font-size: 3.75em;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    span{
+      font-size: 0.875em;
+      font-style: italic;
+    }
+  }
+
+  .caracteristicas{
+    display: flex;
+    align-items: flex-start;
+
+    & > div{
+      width: 80px;
+      text-align: center;
+      background: $color-primary;
+      border-radius: 5px;
+      box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+      position: relative;
+
+      &:first-child{
+        margin-right: 30px;
+      }
+    }
+
+    span{
+      display: block;
+      color: $color-secundary;
+    }
+
+    .numero{
+      font-size: 3em;
+      line-height: 1;
+      margin-top: 10px auto;
+      padding: 5px;
+    }
+
+    .rotulo{
+      background: #FFF;
+      border-radius: 0 0 5px 5px;
+      padding: 5px 0;
+      position: relative;
+      top: 2px
+    }
+  }
+
+  .destaque{
+    font-size: 0.875em;
+    color: $color-secundary;
+    max-width: 16em;
+  }
+
+  .citacao, .atributos{
+    align-self: start;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+    background: $color-primary;
+    color: #FFF;
+  }
+
+  .citacao{
+    p{
+      font-size: 1.5em;
+      font-style: italic;
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+      color: #FFF;
+    }
+  }
+
+  .atributos{
+    li{
+      color: #FFF;
+      font-family: Courier, monospace;
+      font-size: 1.125em;
+      padding: 15px;
+      font-weight: 700;
+      
+      & + li {
+        border-top: 2px solid $color-secundary;
+      }
+    }
+  }
+
+  .informacoes{
+    p + p{
+      margin-top: 30px;
+    }
+  }
+}
+
+.col-wide{
+  grid-column: 1 / -1;
+}
+
+.image-1{
+  grid-row: span 2;
+  align-self: flex-end;
+}
+
+.image-2{
+  align-self: flex-end;
 }
